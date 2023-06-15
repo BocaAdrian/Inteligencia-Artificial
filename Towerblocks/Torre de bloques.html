@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Torre Limite</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<meta name="viewport" content="width=device-width,user-scalable=no">
+
+<div id="container">
+	<div id="game"></div>
+	<div id="score">0</div>
+	<div id="instructions">Click (o presiona espacio) colocar el bloque en medio</div>
+	<div class="game-over">
+		<h2>Game Over</h2>
+		<p>Lo hiciste muy bien, eres el mejor.</p>
+		<p>Dale click o espacio para volver a empezar :D</p>
+	</div>
+	<div class="game-ready">
+		<div id="start-button">Start</div>
+			<br>
+				<p>
+					<div>
+		<body>
+			<button onclick="goBack()">Regresar</button>
+
+			<script>
+				function goBack() {
+					window.history.back();
+				}
+			</script>
+		</body>
+				</p>
+					</div>
+	</div>
+</div>
+<!-- partial -->
+  <script src='https://codepen.io/ste-vg/pen/zBVaZw.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script><script  src="./script.js"></script>
+
+<style>
+        #bloque {
+            width: 100px;
+            height: 100px;
+            background-color: #CECACA;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="bloque"></div>
+</body>
+</body>
+</html>
