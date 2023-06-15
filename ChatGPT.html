@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ChatGPT</title>
+		<style>
+			.video-frame {
+				border: 2px solid #FFB600;
+				border-radius: 8px;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+				overflow: hidden;
+			}
+		</style>
+		 <style>
+			.brillo {
+			  color: #fff; /* Color blanco para el texto */
+			  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Sombra del texto */
+			  background: linear-gradient(to right, #00F0E5, #fff); /* Degradado de fondo */
+			  display: inline-block;
+			  padding: 10px;
+			  font-size: 24px;
+			}
+		</style>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Logo -->
+									<head>
+									  <style>
+										#logo {
+										  animation: cambioColor 2s infinite;
+										}
+										
+										@keyframes cambioColor {
+										  0% { color: #D1FF00; }
+										  10% { color: #9BFF00; }
+										  20% { color: #55FF00; }
+										  30% { color: #13FF00; }
+										  40% { color: #00FF1F; }
+										  50% { color: #00FF55; }
+										  60% { color: #00FF1F; }
+										  70% { color: #13FF00; }
+										  80% { color: #55FF00; }
+										  90% { color: #55FF00; }
+										  100% { color: #9BFF00; }
+										}
+									  </style>
+									</head>
+									<body>
+									  <h1><a href="Index.html" id="logo"><font face="Optima">ChatGPT</a></h1></font>
+
+									  <!-- JavaScript opcional para pausar el cambio de color al hacer clic -->
+									  <script>
+										var logo = document.getElementById('logo');
+										logo.addEventListener('click', function() {
+										  logo.style.animationPlayState = 'paused';
+										});
+									  </script>
+									</body>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="Index.html">Inicio</a>
+										<a href="Que es la ia.html">¿Qué es la [IA]? </a>
+										<a href="ChatGPT.html">ChatGPT</a>
+										<a href="Futuro de la IA.html">Futuro de la [IA]</a>
+										<a href="Conclusiones.html">Conclusiones</a>
+									</nav>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Content -->
+				<section id="content">
+					<div class="container">
+						<div class="row">
+							<div class="col-3 col-12-medium">
+							
+
+								<!-- Sidebar -->
+									<section>
+										<header>
+											<h2>Presentamos ChatGPT</h2>
+										</header>
+										Han entrenado un modelo llamado ChatGPT que interactúa de forma conversacional. 
+										El formato de diálogo hace posible que ChatGPT responda preguntas de seguimiento, 
+										admita sus errores, cuestione premisas incorrectas y rechace solicitudes inapropiadas.
+									</section>
+									<section>
+										<header>
+											<h2>ChatGPT</h2>
+										</header>
+										<p>
+											ChatGPT es un modelo hermano de InstructGPT, que está capacitado para seguir una instrucción 
+											en un mensaje y proporcionar una respuesta detallada.
+											Estamos emocionados de presentar ChatGPT para obtener comentarios de los usuarios 
+											y conocer sus fortalezas y debilidades. Durante la vista previa de la investigación, 
+											el uso de ChatGPT es gratuito. Pruébalo ahora en <a href="https://chat.openai.com"><font color="green">chat.openai.com</a></font>
+										</p>
+											<style>
+												#chatbox {
+													width: 300px;
+													height: 400px;
+													border: 1px solid #ccc;
+													overflow-y: scroll;
+													padding: 10px;
+												}
+											</style>
+										</head>
+										<body>
+											<h1>Chatbot</h1>
+
+											<div id="chatbox"></div>
+
+											<input type="text" id="userInput" placeholder="Escribe tu pregunta..." onkeydown="handleKeyPress(event)">
+											<button onclick="sendMessage()">Enviar</button>
+
+											<script>
+												var chatbox = document.getElementById("chatbox");
+												var userInput = document.getElementById("userInput");
+
+												function handleKeyPress(event) {
+													if (event.keyCode === 13) {
+														sendMessage();
+													}
+												}
+
+												function sendMessage() {
+													var question = userInput.value;
+													var answer = getAnswer(question);
+													displayMessage(question, 'usuario');
+													displayMessage(answer, 'Centinell');
+													userInput.value = '';
+												}
+
+												function displayMessage(message, sender) {
+													var messageElement = document.createElement("p");
+													messageElement.innerHTML = '<strong>' + sender + ': </strong>' + message;
+													chatbox.appendChild(messageElement);
+													chatbox.scrollTop = chatbox.scrollHeight;
+												}
+
+												function getAnswer(question) {
+													if (isMathExpression(question)) {
+														try {
+															var result = eval(question);
+															return 'El resultado es: ' + result;
+														} catch (error) {
+															return 'Hubo un error al evaluar la expresión matemática.';
+														}
+													} else {
+														switch (question.toLowerCase()) {
+															case 'hola':
+																return '¡Hola! ¿Cómo puedo ayudarte?';
+															case 'no nada':
+																return ':(';
+															case 'deberia ponerle a mi alumno ¿10?':
+																return 'Si, debería';
+															case '¿cual es tu nombre?':
+															case 'como te llamas':
+															case 'cual es tu nombre':
+															case '¿como es te llamas?':
+																return 'Soy un chatbot creado a partir de un principio similar al de Centinell por Adrián.';
+															case 'oye':
+																return '¿Si? dime, ¿que necesitas?.';
+															case '¿puedes hacer operaciones matematicas?':
+															case 'puedes hacer operaciones matematicas':
+																return 'Puedo hacer lo basico';
+															case '¿cuál es el clima hoy?':
+																return 'Lo siento, no puedo proporcionar información en tiempo real.';
+															default:
+																return 'No tengo una respuesta para esa pregunta. ¿Podrías intentar otra?';
+														}
+													}
+												}
+
+												function isMathExpression(question) {
+													var regex = /^[\d+\-*/\s]+$/;
+													return regex.test(question);
+												}
+											</script>
+										</body>
+									</section>
+
+							</div>
+							<div class="col-9 col-12-medium imp-medium">
+
+								<!-- Main Content -->
+									<section>
+										<header>
+											<div class="brillo"><font color="169F00" size="6" face="Comic Sans MS">ChatGPT</font></div>
+											<h3><font color="12906E" face="Garamond">¿Revolución en la interacción?</h3></font>
+										</header>
+										<p>
+											ChatGPT es un modelo de lenguaje desarrollado por OpenAI, basado en la arquitectura
+											GPT-3.5. Es una versión avanzada de la serie GPT (Generative Pre-trained Transformer)
+											que utiliza técnicas de aprendizaje automático y redes neuronales para generar respuestas
+											de texto coherentes y contextuales.
+										</p>
+										<p>
+											El modelo de lenguaje ChatGPT está diseñado específicamente para interactuar con 
+											los usuarios a través de texto, simulando una conversación natural. Puede comprender preguntas,
+											solicitudes y otros comandos en lenguaje natural, y generar respuestas relevantes en función
+											del contexto proporcionado.
+										</p>
+											<style>
+														#gif {
+														  display: none;
+														}
+													  </style>
+													</head>
+													<body>
+													  <center><img id="gif" src="videos/barabara-bere.gif" alt="GIF"></center>
+
+													  <script>
+														const tecla1 = 71; 
+														const tecla2 = 82; 
+
+														let ctrlKey = false;
+														let gKey = false;
+
+														function mostrarGif() {
+														  document.getElementById('gif').style.display = 'block';
+														}
+
+														function ocultarGif() {
+														  document.getElementById('gif').style.display = 'none';
+														}
+
+														document.addEventListener('keydown', function(event) {
+
+														  if (event.keyCode === tecla2) {
+															ctrlKey = true;
+														  }
+
+														  if (event.keyCode === tecla1) {
+															gKey = true;
+														  }
+
+														  if (ctrlKey && gKey) {
+															mostrarGif();
+														  }
+														});
+
+														document.addEventListener('keyup', function(event) {
+														  if (event.keyCode === tecla2) {
+															ctrlKey = false;
+														  }
+
+														  if (event.keyCode === tecla1) {
+															gKey = false;
+															ocultarGif();
+														  }
+														});
+													  </script>
+										<p>
+											Para entrenar a ChatGPT, se utilizaron grandes cantidades de texto de diversas fuentes, 
+											como libros, artículos de noticias y páginas web. Esto permite que el modelo tenga conocimientos 
+											generales sobre una amplia gama de temas. Sin embargo, es importante tener en cuenta que ChatGPT 
+											no tiene una comprensión profunda del mundo real ni acceso a información en tiempo real, ya que su 
+											conocimiento se basa en datos disponibles hasta septiembre de 2021.
+											<center><img src="images/pic10.jpg"></center>
+										</p>
+										<p>
+											ChatGPT se ha entrenado en una amplia variedad de textos y tiene la capacidad de responder a 
+											preguntas, mantener conversaciones, generar texto coherente y realizar tareas relacionadas 
+											con el lenguaje. A través de la retroalimentación y la interacción con los usuarios, 
+											ChatGPT puede mejorar y ajustar sus respuestas con el tiempo.
+										</p>
+										<p>
+											Este modelo ha demostrado ser útil en una amplia gama de aplicaciones, 
+											como la asistencia al cliente, la generación de contenido, la tutoría, 
+											la escritura creativa y la resolución de problemas lingüísticos. Sin embargo, 
+											es importante tener en cuenta que ChatGPT no tiene conocimiento del mundo real 
+											más allá de lo que ha aprendido de los datos de entrenamiento y no puede proporcionar 
+											información actualizada más allá de su fecha de corte de conocimiento.
+											<center><img src="Videos/as03.gif" alt="GIF animado" width="500" height="500"></center>
+										</p>
+										<p>
+											A continuacion enseñare la respuesta de <font color="5DDC18">ChatGPT</font> al preguntarle sobre su opinion de la politica
+											en México:
+											La política en México es un tema amplio y complejo que abarca diversos aspectos y perspectivas. 
+											El país tiene un sistema político democrático, con un presidente que es elegido por voto 
+											popular y un Congreso compuesto por dos cámaras: el Senado y la Cámara de Diputados.
+											Al igual que en otros países, la política en México ha sido objeto de debate y crítica. 
+											Algunas personas pueden tener opiniones positivas sobre ciertos aspectos de la política 
+											mexicana, como las reformas implementadas en áreas como la educación, la economía o los 
+											derechos humanos. Otros pueden tener opiniones negativas, citando problemas como la corrupción, 
+											la inseguridad, la desigualdad social o los desafíos persistentes en áreas como la educación y 
+											la salud.
+											Es importante tener en cuenta que las opiniones sobre la política pueden variar 
+											significativamente según las experiencias personales, las ideologías políticas y otros 
+											factores. Por lo tanto, es común encontrar una diversidad de opiniones en relación con la 
+											política en México, al igual que en otros países del mundo.
+										</p>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+
+							<div class="col-4 col-12-medium imp-medium">
+
+
+			<!-- Copyright -->
+				<div id="copyright">
+					&copy; Inteligencia Artificial. Todos los derechos reservados. 
+					| Por: <a href="https://www.youtube.com/@cbalberto5847">Cbalberto/Adrian Alberto Bocanegra Castro</a>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+				
+				
+
+</body>
+</html>

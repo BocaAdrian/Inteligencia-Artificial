@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Gato Cantando</title>
+  <style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <video width="640" height="360" controls autoplay>
+      <source src="videos/CatSingingsong.mp4" type="video/mp4">
+    </video>
+    <button onclick="goBack()">Regresar</button>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
